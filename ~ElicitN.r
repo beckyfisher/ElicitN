@@ -32,9 +32,9 @@
 
 #If you use this software or any modification of it in your research please cite 
 #the following in all resulting works: 
-#Fisher, R., O'Leary, R.A., Low Choy, S., Mengersen, K., Caley, M.J., in press. 
+#Fisher, R., O'Leary, R.A., Low Choy, S., Mengersen, K., Caley, M.J., 2012.
 #A software template for elicitation of expert knowledge about species richness or similar counts. 
-#Environmental Modeling and Software.
+#Environmental Modeling and Software. 30: 1-14
 #-------------------------------------------------------------------------------
 rm(list=ls())
 require(tcltk)
