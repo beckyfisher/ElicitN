@@ -40,7 +40,10 @@ Mhatold <- c(Mhat)
 howskew <- c(Uhat-Mhat)
 Mhat <- c((Uhat-Mhat)+Lhat)
 
-source('modal.R')
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/modal.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source('modal.R')
+
 
 
 fit.score.mode <- function(Lhat, Uhat, Mhat, pihat, w=rep(1/3,3)) {

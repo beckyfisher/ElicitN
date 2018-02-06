@@ -9,8 +9,14 @@ combine.expert.norm.N <-function(combine.expert.sample, new.sure=0.95){ #,best.t
 #combine.expert.sample=totalN.taxa.t
 #combine.expert.sample=combine.sample.i.CRgenetic
 
-source("modal3.r")
-source("expert.K.noplot.ALLnorm.optim.median.r")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/modal3.r", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("modal3.r")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.ALLnorm.optim.median.r", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.noplot.ALLnorm.optim.median.r")
+
 Best <- median(combine.expert.sample)
 Lower <- quantile(combine.expert.sample, probs = (1-new.sure)/2)
 Upper <- quantile(combine.expert.sample, probs = new.sure+ (1-new.sure)/2)

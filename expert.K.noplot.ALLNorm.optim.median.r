@@ -43,13 +43,29 @@
 
 expert.K.noplot.ALLnorm <-function(Lhat, Uhat, Mhat, pihat,  new.alpha=0.95, best.type.status=cbind("ans"=c("N", "P", "M")), ee.type=1){
 
-source("expert.K.LN.optim.median.R")
-source("expert.K.Norm.optim.R")
-source("expert.K.LNleftskew.optim.median.R")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.LN.optim.median.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.LN.optim.median.R")
 
-source("expert.K.noplot.LN.optim.median.R")
-source("expert.K.noplot.Norm.optim.R")
-source("expert.K.noplot.LNleftskew.optim.median.R")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.Norm.optim.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.Norm.optim.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.LNleftskew.optim.median.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.LNleftskew.optim.median.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.LN.optim.median.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.noplot.LN.optim.median.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.Norm.optim.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.noplot.Norm.optim.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.LNleftskew.optim.median.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.noplot.LNleftskew.optim.median.R")
 
 expertrange <- Uhat-Lhat
 

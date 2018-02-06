@@ -33,7 +33,10 @@
 
 expert.K.Norm <-function(Lhat, Uhat, Mhat, pihat, new.alpha){
 
-source('modal.R')
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/modal.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source('modal.R')
+
 
 fit.score.mode <- function(Lhat, Uhat, Mhat, pihat, w=rep(1/3,3)) {
 	

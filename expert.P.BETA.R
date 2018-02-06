@@ -13,7 +13,10 @@
 
 expert.P.BETA <-function(Lower.P, Upper.P, Best.P, Sureness.P, new.sure, best.type.status, ee.type){
 
-source("modal.R")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/modal.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source('modal.R')
+
 
 fitBETA.score.mode <- function(Lower.P, Upper.P, Best.P, Sureness.P, w=rep(1/3,3)) {
 	

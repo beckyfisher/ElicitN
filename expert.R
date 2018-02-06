@@ -16,8 +16,13 @@ Lower.P, Upper.P, Best.P,
 Lower.M, Upper.M,  Best.M, Sureness,new.alpha,
 expert.K.ALLnorm.results,best.type.status){
 
-source("expert.P.BETA.R")
-source("expert.K.noplot.ALLNorm.R")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.P.BETA.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.P.BETA.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.ALLNorm.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.noplot.ALLNorm.R")
 
 
 ##############################################
@@ -106,7 +111,9 @@ mu <- expert.K.ALLnorm.results$fit.best.mode.mu
 sig <- expert.K.ALLnorm.results$fit.best.mode.sig
 
 
-source("feedback.AllNorm.R")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/feedback.AllNorm.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("feedback.AllNorm.R")
 feedback.AllNorm.results <- feedback.AllNorm(mu, sig,Sureness,new.alpha, MhatK, which.dist) 
 
 lower.K <- feedback.AllNorm.results$lower
@@ -343,7 +350,9 @@ mu <- expert.K.ALLnorm.results$fit.best.mode.mu
 sig <- expert.K.ALLnorm.results$fit.best.mode.sig
 
 
-source("feedback.AllNorm.R")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/feedback.AllNorm.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("feedback.AllNorm.R")
 feedback.AllNorm.results <- feedback.AllNorm(mu, sig,Sureness,new.alpha, MhatK, which.dist) 
 
 lower.K <- feedback.AllNorm.results$lower

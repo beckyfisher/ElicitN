@@ -30,7 +30,7 @@ how we are going to ask the questions. We will focus on estimates of human popul
 We do not expect you to be an expert in this topic",font=fontText))
 tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
-source.file.train="ee_component1.tcltk.r"
+source.file.train=getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_component1.tcltk.r", ssl.verifypeer = FALSE)#"ee_component1.tcltk.r"
 
 
 Back.but <- tkbutton(tt,text="  Back  ",font=fontText,
@@ -45,7 +45,9 @@ Back.but <- tkbutton(tt,text="  Back  ",font=fontText,
                                             "Best"=tclvalue(Best),
                                             "New.alpha"=tclvalue(New.alpha))              
                             tclvalue(done.var)<<-1 
-                            source.file.train<<-"ee_personal.tcltk.r"} )
+                            source.file.train<<- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_personal.tcltk.r", ssl.verifypeer = FALSE)#"ee_personal.tcltk.r"
+
+                            } )
 tkgrid(Back.but)
                             
 City <- tclVar(default.vars.training["City"])
@@ -77,8 +79,14 @@ save(list="training.expert.K.LN.results",file="training.expert.K.LN.results")
 save(list="default.vars.training",file="default.vars.training")
 setwd(dirName)
 tkdestroy(tt)
-source(source.file.train)}
+eval(parse(text = source.file.train))
+#source(source.file.train)
+
+}
 
 if(tclvalue(done.var)==1){
 tkdestroy(tt)
-source(source.file.train) }
+eval(parse(text = source.file.train))
+#source(source.file.train)
+
+}

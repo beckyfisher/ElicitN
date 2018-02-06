@@ -16,7 +16,8 @@ tt <- tktoplevel()
 tkwm.title(tt,"Expert elicitation survey - Part E, Parameter elicitation.")
 tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
-source.file.component1="ee_database.r"
+source.file.component1= getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_database.r", ssl.verifypeer = FALSE)#"ee_database.r"
+
 
 ## Place a text message first.
 tkgrid(tklabel(tt,text=
@@ -59,7 +60,9 @@ save(list="default.vars.component1",file="default.vars.component1")
 save(list="expert.component1.K.LN.results",file="expert.component1.K.LN.results")
 setwd(dirName)
 tkdestroy(tt)
-source(source.file.component1) }
+eval(parse(text = source.file.component1))
+#source(source.file.component1)
+}
 
 if(tclvalue(done.var)==3){
 more.components<<-0
@@ -73,7 +76,9 @@ save(list="default.vars.component1",file="default.vars.component1")
 save(list="expert.component1.K.LN.results",file="expert.component1.K.LN.results")
 setwd(dirName)
 tkdestroy(tt)
-source("ee_database.r")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_database.r", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("ee_database.r")
 
 }
 

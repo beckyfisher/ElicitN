@@ -13,13 +13,29 @@
 
 expert.K.ALLnorm.just1plot <-function(Lhat, Uhat, Mhat, pihat, new.alpha,best.type.status, ee.type=1){
 
-source("expert.K.LN.just1plot.R")
-source("expert.K.Norm.just1plot.R")
-source("expert.K.LNleftskew.just1plot.R")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.LN.just1plot.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.LN.just1plot.R")
 
-source("expert.K.noplot.LN.just1plot.R")
-source("expert.K.noplot.Norm.just1plot.R")
-source("expert.K.noplot.LNleftskew.just1plot.R")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.Norm.just1plot.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.Norm.just1plot.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.LNleftskew.just1plot.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.LNleftskew.just1plot.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.LN.just1plot.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.noplot.LN.just1plot.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.Norm.just1plot.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.noplot.Norm.just1plot.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.LNleftskew.just1plot.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.noplot.LNleftskew.just1plot.R")
 
 expertrange <- Uhat-Lhat
 

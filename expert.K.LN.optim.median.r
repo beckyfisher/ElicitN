@@ -51,7 +51,10 @@
 
 expert.K.LN <-function(Lhat, Uhat, Mhat, pihat, new.alpha, best.type.status, ee.type){
 
-source('modal.R')
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/modal.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source('modal.R')
 
 fit.score.mode <- function(Lhat, Uhat, Mhat, pihat, w=rep(1/3,3)) {
   

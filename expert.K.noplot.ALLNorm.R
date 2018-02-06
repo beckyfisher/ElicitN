@@ -13,13 +13,29 @@
 
 expert.K.noplot.ALLnorm <-function(Lhat, Uhat, Mhat, pihat, new.alpha, best.type.status, ee.type){
 
-source("expert.K.LN.R")
-source("expert.K.Norm.R")
-source("expert.K.LNleftskew.R")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.LN.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.LN.R")
 
-source("expert.K.noplot.LN.R")
-source("expert.K.noplot.Norm.R")
-source("expert.K.noplot.LNleftskew.R")
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.Norm.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.Norm.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.LNleftskew.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.LNleftskew.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.LN.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.noplot.LN.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.Norm.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.noplot.Norm.R")
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.LNleftskew.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#source("expert.K.noplot.LNleftskew.R")
 
 expertrange <- Uhat-Lhat
 
