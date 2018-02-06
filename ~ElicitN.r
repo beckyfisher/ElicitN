@@ -207,7 +207,8 @@ All.but <- tkbutton(ttStart.Page,text="  Start survey from beginning  ",font=fon
  ## Run the introduction widget -------------------------------------------------
 eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_introduction.tcltk.r", ssl.verifypeer = FALSE)
 eval(parse(text = eval.text))
-#source("ee_introduction.tcltk.r")})
+#source("ee_introduction.tcltk.r")
+})
 
 Expert.data.but  <- tkbutton(ttStart.Page,text="  Go straight to elicitation of data  ",font=fontText,
                    command=function() {
@@ -217,7 +218,8 @@ Expert.data.but  <- tkbutton(ttStart.Page,text="  Go straight to elicitation of 
  ## Run the expert data widget -------------------------------------------------
 eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_component1.tcltk.r", ssl.verifypeer = FALSE)
 eval(parse(text = eval.text))
-#source("ee_component1.tcltk.r")})
+#source("ee_component1.tcltk.r")
+})
 
 # Save data to database and create output file
 Save.data.but <- tkbutton(ttStart.Page,text="  Save and output data  ",font=fontText,
