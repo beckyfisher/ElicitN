@@ -61,7 +61,10 @@ tkgrid(tklabel(tt,text=
 We'll start by thinking how big or how small you think this number could be.",font=fontText))
 tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
-elicitN.train(default.vars.training) 
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_function_elicitN_training.tcltk.r", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+#elicitN.train(default.vars.training)
+
 training.out.temp=c("City"=as.character(tclvalue(City)),temp.out)
 default.vars.training=training.out.temp
 

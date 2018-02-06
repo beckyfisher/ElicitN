@@ -46,3 +46,4 @@ tkdestroy(tt)
 eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_training_questions.tcltk.r", ssl.verifypeer = FALSE)
 eval(parse(text = eval.text))
 #source("ee_training_questions.tcltk.r")
+

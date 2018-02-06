@@ -11,7 +11,8 @@
 #PARTICULAR PURPOSE.  See the GNU General Public License 
 #(http://www.gnu.org/licenses/) for more details.
 
-elicitN.train=function(def.vars){
+#elicitN.train=function(def.vars){
+def.vars=default.vars.training
 done.var <<- tclVar(0)
 plot.var <<- tclVar(0)
 change.var <<- tclVar(0)
@@ -112,4 +113,4 @@ Plot.but <- tkbutton(tt,text="  Get feedback  ",font=fontText,
 tkgrid(Plot.but,Finished.but)
 tkwait.variable(done.var)
 try(dev.off(),silent=TRUE)
-}
+#}
