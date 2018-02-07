@@ -77,12 +77,12 @@ eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/maste
 eval(parse(text = eval.text))
 #source("ee_default.vars.r")
 
-eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_function_elicitN.tcltk.r", ssl.verifypeer = FALSE)
-eval(parse(text = eval.text))
+#eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_function_elicitN.tcltk.r", ssl.verifypeer = FALSE)
+#eval(parse(text = eval.text))
 #source("ee_function_elicitN.tcltk.r")
 
-eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_function_elicitN_training.tcltk.r", ssl.verifypeer = FALSE)
-eval(parse(text = eval.text))
+#eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_function_elicitN_training.tcltk.r", ssl.verifypeer = FALSE)
+#eval(parse(text = eval.text))
 #source("ee_function_elicitN_training.tcltk.r")
 
 eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_function_elicitInf_stdqst.tcltk.r", ssl.verifypeer = FALSE)
