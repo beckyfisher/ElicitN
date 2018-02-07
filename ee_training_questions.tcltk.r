@@ -166,7 +166,8 @@ training.out.temp=c("City"=as.character(tclvalue(City)),temp.out)
 default.vars.training=training.out.temp
 
 
-rm(temp.out)
+if(exists(temp.out)){rm(temp.out)}
+
 #--- Save files --------------
 if(tclvalue(done.var)==2){
 #if(max(ls()=="training.expert.K.LN.results")==0){

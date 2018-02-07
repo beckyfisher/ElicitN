@@ -222,13 +222,13 @@ eval(parse(text = eval.text))
 })
 
 # Save data to database and create output file
-Save.data.but <- tkbutton(ttStart.Page,text="  Save and output data  ",font=fontText,
-                   command=function() {
-
-                   eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_database.r", ssl.verifypeer = FALSE)
-                   eval(parse(text = eval.text))
-                   #source("ee_database.r")
-                   })
+#Save.data.but <- tkbutton(ttStart.Page,text="  Save and output data  ",font=fontText,
+#                   command=function() {
+#
+#                   eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_database.r", ssl.verifypeer = FALSE)
+#                   eval(parse(text = eval.text))
+#                   #source("ee_database.r")
+#                   })
 
                    
 tkgrid(All.but)

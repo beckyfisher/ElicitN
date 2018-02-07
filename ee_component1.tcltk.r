@@ -167,7 +167,7 @@ try(dev.off(),silent=TRUE)
 default.vars.component1[names(temp.out)]=temp.out
 expert.data<<-tclvalue(Data)
 default.vars.component1["Data"]<-expert.data
-rm(temp.out)
+if(exists(temp.out)){rm(temp.out)}
                
 #--- Save files --------------
 if(tclvalue(done.var)==2){
