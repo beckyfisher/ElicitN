@@ -20,7 +20,7 @@ setwd(dirName)
 o=1
 ################################################################################
 
-tt <<- tktoplevel()
+tt <- tktoplevel()
 tkwm.title(tt,"Expert elicitation survey - Part C, training questions")
 tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 ## Place a text message first.

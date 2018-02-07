@@ -12,7 +12,7 @@
 #(http://www.gnu.org/licenses/) for more details.
 
 survey.stage="E"
-tt <<- tktoplevel()
+tt <- tktoplevel()
 tkwm.title(tt,"Expert elicitation survey - Part E, Parameter elicitation.")
 tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
