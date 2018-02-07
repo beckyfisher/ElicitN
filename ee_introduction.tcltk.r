@@ -16,18 +16,21 @@ tt <- tktoplevel()
 done.var <- tclVar(0)
 tkwm.title(tt,"Expert elicitation survey - Part A, Introduction")
 
-tkgrid(tklabel(tt, text="Overall goal: Hindcast time spent on the 2015 Conoco Barossa project to help AIMS determine how well actual time spent aligns with that budgeted ",font=fontHeading))
+tkgrid(tklabel(tt, text="Overall goal: Develop an expert based estimate of the value of interest that properly captures uncertainty around that estimate ",font=fontHeading))
 tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
 
 tkgrid(tklabel(tt, text="What we would like from you:",font=fontHeading))
 tkgrid(tklabel(tt, text=
-"An estimate of the time you spent on varous components of the project",font=fontText))
+"An estimate of the the value of interest",font=fontText))
 tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
-tkgrid(tklabel(tt, text="Have you reshreshed your memory of the project by looking through the field trip report, interim report and final report?",font=fontHeading))
+tkgrid(tklabel(tt, text="Have you had a chance to revise the information provided in order to refresh your memory around the topic of interest?",font=fontHeading))
 tkgrid(tklabel(tt, text=
-"If not please take the time to do so now, and/or spend some time reviewing your own files to refresh your memory of the project",font=fontText))
+"If not please take the time to do so now, and/or spend some time reviewing your own files to refresh
+your memory. Please think about the problem from a broader context, focusing on elements that might
+contribute to your uncertainty. We are not really all that interested in a single number,
+but rather the full range of possibilities this number may take.",font=fontText))
 tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
 tkgrid(tklabel(tt, text="",font=fontText))
