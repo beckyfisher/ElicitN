@@ -16,7 +16,7 @@ tt <- tktoplevel()
 done.var <- tclVar(0)
 tkwm.title(tt,"Expert elicitation survey - Part A, Introduction")
 
-tkgrid(tklabel(tt, text="Overall goal: Develop an expert based estimate of the value of interest that properly captures uncertainty around that estimate ",font=fontHeading))
+tkgrid(tklabel(tt, text="Overall goal: Develop an expert based estimate of a value(s) of interest that properly captures uncertainty around that estimate ",font=fontHeading))
 tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
 
