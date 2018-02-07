@@ -22,8 +22,8 @@ source.file.component1= getURL("https://raw.githubusercontent.com/beckyfisher/El
 ## Place a text message first.
 tkgrid(tklabel(tt,text=
 "We are attempting to estimate a value(s) of interest.
-We would like to get an estimate from you for the value(s) of interest.
-What value can you provide an estimate for?",font=fontText))
+We would like to get an estimate from you for a component of this the value(s).
+What component can you provide an estimate for?",font=fontText))
 
 #_________________ set default Data variable _________________________________
 
