@@ -59,6 +59,12 @@ if (!nchar(dirName)) {
 setwd(dirName)
 #setwd('..')
 
+all.files=c("111",list.files())
+if(length(na.omit(match(all.files,"results")))==0){
+      dir.create(file.path(paste(dirName,"results",sep="/")))
+}
+
+
 # Source the functions needed to run the scripts -------------------------------
 require(RCurl)
 eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.ALLNorm.just1plot.R", ssl.verifypeer = FALSE)
@@ -105,8 +111,22 @@ survey.stage=""   # Note that this is currently set so the form DOES NOT ask the
                   # to edit this change all "status" values from 1 to 0.
 
 #_______________ Read the database table files _________________________________
-tbl_training=as.matrix(read.table(file="tbl_training.csv",header=TRUE,sep=","))
-tbl_component1=as.matrix(read.table(file="tbl_component1.csv",header=TRUE,sep=","))
+all.files=c("111",list.files())
+if(length(na.omit(match(all.files,"tbl_training.csv")))==1){
+  tbl_training=as.matrix(read.table(file="tbl_training.csv",header=TRUE,sep=","))}else{
+  tbl_training=matrix(rep(NA,10),nrow=1)
+  colnames(tbl_training)=c("Name","City","Units","Smallest","Largest","Lower","Upper",
+                           "Sureness","Best","New.alpha")
+  write.table(tbl_training,file="tbl_training.csv",row.names=FALSE,sep=",")
+}
+if(length(na.omit(match(all.files,"tbl_component1.csv")))==1){
+  tbl_component1=as.matrix(read.table(file="tbl_component1.csv",header=TRUE,sep=","))}else{
+  tbl_component1=matrix(rep(NA,10),nrow=1)
+  colnames(tbl_component1)=c("Name","City","Units","Smallest","Largest","Lower","Upper",
+                           "Sureness","Best","New.alpha")
+  write.table(tbl_component1,file="tbl_component1.csv",row.names=FALSE,sep=",")
+
+}
 
 #______________ Start page ____________________________________________________
 ttStart.Page <- tktoplevel()
