@@ -29,9 +29,4 @@ write.table(tbl_component1,file="tbl_component1.csv",row.names=FALSE,sep=",")
 
 tkmessageBox(message="All answers have been saved")
 
-#_______________ Read the database table files _________________________________
-tbl_training=as.matrix(read.table(file="tbl_training.csv",header=TRUE,sep=","))
-tbl_component1=as.matrix(read.table(file="tbl_component1.csv",header=TRUE,sep=","))
-
-
   
