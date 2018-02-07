@@ -20,7 +20,7 @@ tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 tbl_training=as.matrix(read.table(file="tbl_training.csv",header=TRUE,sep=","))
 tbl_component1=as.matrix(read.table(file="tbl_component1.csv",header=TRUE,sep=","))
 
-source.file.component1= getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_database.r", ssl.verifypeer = FALSE)#"ee_database.r"
+source.file.component1=getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_database.r", ssl.verifypeer = FALSE)#"ee_database.r"
 
 
 ## Place a text message first.
