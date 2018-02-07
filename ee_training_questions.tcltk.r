@@ -21,7 +21,7 @@ o=1
 ################################################################################
 
 tt <- tktoplevel()
-tkwm.title(tt,"Expert elicitation survey - Part C, training questions")
+tkwm.title(tt,"Expert elicitation survey - Part B, training questions")
 tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 ## Place a text message first.
 tkgrid(tklabel(tt,text=
@@ -137,7 +137,6 @@ tkgrid(tklabel(tt,text=
 #Do you think these bounds are too narrow or too wide or just right?
 
 # Create "calculate and plot", "finished" and "back" buttons
-
 Finished.but <- tkbutton(tt,text="  Next  ",font=fontText,
                   command=function() {
                   #Output the information as a list

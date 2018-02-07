@@ -46,7 +46,7 @@ than 50% sure they will encompass the real value (ie. make them wider)  ")
       expert.K.LN.results <<- expert.K.ALLnorm.just1plot(Lhat,Uhat,Mhat,pihat,new.alpha,best.type.status,ee.type=1)
       tclvalue(plot.var)<<-2
       }}
-      tkfocus(tt)
+      #tkfocus(tt)
       }
 
 ################################################################################
