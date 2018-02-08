@@ -51,21 +51,6 @@ eval(parse(text = eval.text))
 #source("expert.K.noplot.ALLNorm.just1plot.R")
 
 
-#source("feedback.AllNorm.R")
-#source("modal.R")
-##source("rnormals.number_v2.r")
-#source("expert.K.ALLNorm.just1plot.R")
-##source("expert.R")
-#source("expert.just1plot.R")
-##source("ee_default.vars.r")
-#source("ee_function_elicitN.tcltk.r")
-#source("ee_function_elicitN_training.tcltk.r")
-#source("ee_function_elicitInf_stdqst.tcltk.r")
-#source("ee_function_elicitInf.tcltk.r")
-#source("ee_function_plot_routines.tcltk.r")
-
-
-
 # read in the data tables
 #_______________ Read the database table files _________________________________
 tbl_training=na.omit(as.matrix(read.table(file="tbl_training.csv",header=TRUE,sep=",")))
@@ -106,12 +91,6 @@ n=length(out$Ksp)
 complete.sample=rowSums(do.call("cbind",lapply(fitted.components, FUN=function(x){x$Ksp})))
 dev.off()
 boxplot(complete.sample)
-
-#source("modal2.R")
-#source("rnormals.number_v2.R")
-#source("expert.K.noplot.ALLnorm.optim.median.R")
-#source("combine.expert.norm.mod.optim.median.r")
-#total.time=combine.expert.norm.N(combine.expert.sample=complete.sample)
 
 
 # now sum for each task
