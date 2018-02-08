@@ -41,7 +41,7 @@ than 50% sure they will encompass the real value (ie. make them wider)  ")
       tclvalue(plot.var)<<-2
       }
       #tkfocus(tt)
-      }
+}
 
 
 
