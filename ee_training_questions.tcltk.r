@@ -54,12 +54,12 @@ City <- tclVar(default.vars.training["City"])
 entry.City <-tkentry(tt,width="30",font=fontText,textvariable=City)
 tkgrid(tklabel(tt,text=
 "What city do you live in?",font=fontText),entry.City)
-tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
+#tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
 tkgrid(tklabel(tt,text=
 "We're interested in what you think the population of this city is.
 We'll start by thinking how big or how small you think this number could be.",font=fontText))
-tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
+#tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
 #elicitN.train(default.vars.training)
 def.vars=default.vars.training
@@ -84,13 +84,13 @@ entry.Largest <-tkentry(tt,width="30",font=fontText,textvariable=Largest)
 tkgrid(tklabel(tt,text=
 "What is the largest this number could be?",font=fontText),entry.Largest)
 tkgrid(tklabel(tt,text="(You would be really surprised if the number was larger than this.)",font=fontSubText))
-tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
+#tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
 # Lower and Upper --------------------------------------------------------------
 tkgrid(tklabel(tt,text=
 "This means you are nearly 100% sure that the number is in this range. We need to bring these bounds in a bit,
 so you won't be 100% sure the number falls inside these bounds.",font=fontSubText))
-tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
+#tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
 Lower <<- tclVar(def.vars["Lower"])
 entry.Lower <-tkentry(tt,width="30",font=fontText,textvariable=Lower)
@@ -118,7 +118,7 @@ entry.Best<-tkentry(tt,width="30",font=fontText,textvariable=Best)
 tkgrid(tklabel(tt,text=
 "What is your best guess, the most likely value?",font=fontText),entry.Best)
 tkgrid(tklabel(tt,text="(the one where you think you are most likely to be right with this estimate compared with any other)",font=fontSubText))
-tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
+#tkgrid(tklabel(tt,text="    ",font=fontBlank)) # Blank line
 
 tkgrid(tklabel(tt,text=
 "To help you get your numbers right, we can now give some feed back on the implications of what you've just said:
