@@ -83,22 +83,6 @@ eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/maste
 eval(parse(text = eval.text))
 #source("ee_default.vars.r")
 
-#eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_function_elicitN.tcltk.r", ssl.verifypeer = FALSE)
-#eval(parse(text = eval.text))
-#source("ee_function_elicitN.tcltk.r")
-
-#eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_function_elicitN_training.tcltk.r", ssl.verifypeer = FALSE)
-#eval(parse(text = eval.text))
-#source("ee_function_elicitN_training.tcltk.r")
-
-#eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_function_elicitInf_stdqst.tcltk.r", ssl.verifypeer = FALSE)
-#eval(parse(text = eval.text))
-#source("ee_function_elicitInf_stdqst.tcltk.r")
-
-#eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_function_elicitInf.tcltk.r", ssl.verifypeer = FALSE)
-#eval(parse(text = eval.text))
-#source("ee_function_elicitInf.tcltk.r")
-
 eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_function_plot_routines.tcltk.r", ssl.verifypeer = FALSE)
 eval(parse(text = eval.text))
 #source("ee_function_plot_routines.tcltk.r")
@@ -187,7 +171,6 @@ eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/maste
 eval(parse(text = eval.text))
 #source(paste(dirName,"ee_component1.tcltk.r",sep="/"))
 
-
 }
 
 selPrevious.but <-tkbutton(ttStart.Page,text="   Select previous survey results  ", font=fontText,command=selPrevious)
@@ -241,16 +224,7 @@ eval(parse(text = eval.text))
 #source("ee_component1.tcltk.r")
 })
 
-# Save data to database and create output file
-#Save.data.but <- tkbutton(ttStart.Page,text="  Save and output data  ",font=fontText,
-#                   command=function() {
-#
-#                   eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_database.r", ssl.verifypeer = FALSE)
-#                   eval(parse(text = eval.text))
-#                   #source("ee_database.r")
-#                   })
 
-                   
 tkgrid(All.but)
 tkgrid(tklabel(ttStart.Page,text="    ",font=fontBlank)) # Blank line
 tkgrid(Expert.data.but)
