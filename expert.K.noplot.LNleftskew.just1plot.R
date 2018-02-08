@@ -89,7 +89,7 @@ feedback.mode.results <- feedbackLN(fit.best.mode.mu, fit.best.mode.sig, pihat,L
 
 ################
 #calculate K
-Ksp <-rlnorm(10000, fit.best.mode.mu, fit.best.mode.sig)
+Ksp <-Mhatold-(Mhat-rlnorm(10000, fit.best.mode.mu, fit.best.mode.sig))
 
 ##
 #change mode back so that distribution is left skewed
