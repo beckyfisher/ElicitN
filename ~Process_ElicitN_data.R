@@ -46,8 +46,8 @@ eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/maste
 eval(parse(text = eval.text))
 #source("ee_function_plot_routines.tcltk.r")
 
-eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.ALLNorm.just1plot.R", ssl.verifypeer = FALSE)
-eval(parse(text = eval.text))
+#eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.ALLNorm.just1plot.R", ssl.verifypeer = FALSE)
+#eval(parse(text = eval.text))
 #source("expert.K.noplot.ALLNorm.just1plot.R")
 
 
