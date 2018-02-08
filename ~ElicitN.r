@@ -122,7 +122,7 @@ if(length(na.omit(match(all.files,"tbl_training.csv")))==1){
 if(length(na.omit(match(all.files,"tbl_component1.csv")))==1){
   tbl_component1=as.matrix(read.table(file="tbl_component1.csv",header=TRUE,sep=","))}else{
   tbl_component1=matrix(rep(NA,10),nrow=1)
-  colnames(tbl_component1)=c("Name","City","Units","Smallest","Largest","Lower","Upper",
+  colnames(tbl_component1)=c("Name","Taxon","Units","Smallest","Largest","Lower","Upper",
                            "Sureness","Best","New.alpha")
   write.table(tbl_component1,file="tbl_component1.csv",row.names=FALSE,sep=",")
 

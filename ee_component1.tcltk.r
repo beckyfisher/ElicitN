@@ -121,26 +121,6 @@ tkgrid(tklabel(tt,text=
 #Then the bounds corresponding to this level of certainty would be...
 #Do you think these bounds are too narrow or too wide or just right?
 
-# Create "calculate and plot", "finished" and "back" buttons
-
-#Finished.but <- tkbutton(tt,text="  Next  ",font=fontText,
-#                  command=function() {
-#                  #Output the information as a list
-#                  temp.out<<-c(
-#                  "Units"=tclvalue(Units),
-#                  "Smallest"=tclvalue(Smallest),
-#                  "Largest"=tclvalue(Largest),
-#                  "Lower"=tclvalue(Lower),
-#                  "Upper"=tclvalue(Upper),
-#                  "Sureness"=tclvalue(Sureness),
-#                  "Best"=tclvalue(Best),
-#                  "New.alpha"=tclvalue(New.alpha))
-#
-#               if(tclvalue(plot.var)<2){
-#                    tkmessageBox(message = "You must get feedback before you may proceed")}else{
-#                  tclvalue(done.var)<<-2
-#                  more.components<<-1}
-#                   })
 tkbind(tt,"<Destroy>",function() tclvalue(done.var)<<-3)
 
 Plot.but <- tkbutton(tt,text="  Get feedback  ",font=fontText,
@@ -206,8 +186,3 @@ eval(parse(text = eval.text))
 #source("ee_database.r")
 
 }
-
-#if(tclvalue(done.var)==1){
-#tkdestroy(tt)
-#source(source.file.component1)  }
-
