@@ -156,8 +156,8 @@ if(exists(temp.out)){rm(temp.out)}
 #--- Save files --------------
 if(tclvalue(done.var)==2){
 if(tclvalue(plot.var)==2){
-expert.component1.K.LN.results=default.vars.component1#expert.K.LN.results
-#rm(expert.K.LN.results)
+expert.component1.K.LN.results=expert.K.LN.results
+rm(expert.K.LN.results)
 }
 dir.create(paste(dirName,"results",name.respondant,expert.data,sep="/"))
 setwd(paste(dirName,"results",name.respondant,expert.data,sep="/"))

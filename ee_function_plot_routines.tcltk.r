@@ -11,7 +11,6 @@
 #PARTICULAR PURPOSE.  See the GNU General Public License 
 #(http://www.gnu.org/licenses/) for more details.
 
-
 plot_routine <- function() {
   Lhat <- as.numeric(tclvalue(Lower))*as.numeric(tclvalue(Units))
   Uhat <- as.numeric(tclvalue(Upper))*as.numeric(tclvalue(Units))
