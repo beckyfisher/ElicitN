@@ -11,6 +11,7 @@
 #PARTICULAR PURPOSE.  See the GNU General Public License 
 #(http://www.gnu.org/licenses/) for more details.
 
+
 plot_routine <- function() {
   Lhat <- as.numeric(tclvalue(Lower))*as.numeric(tclvalue(Units))
   Uhat <- as.numeric(tclvalue(Upper))*as.numeric(tclvalue(Units))
@@ -35,7 +36,7 @@ Please adjust your realistic upper and lower bounds such that you are more
 than 50% sure they will encompass the real value (ie. make them wider)  ")
   tclvalue(plot.var)<<-1
     }else{
-    
+
       expert.K.LN.results <<- expert.K.ALLnorm.just1plot(Lhat,Uhat,Mhat,pihat,new.alpha,best.type.status,ee.type=1)
       tclvalue(plot.var)<<-2
       }
