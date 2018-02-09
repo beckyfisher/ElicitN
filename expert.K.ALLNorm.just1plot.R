@@ -215,9 +215,9 @@ Norm.score <- (
 ((abs(Uhat-expert.K.Norm.results$ss.mode.results$upper)^2)/1/2))
 
 LNleftskew.score.mode <- 
-(((abs(Mhat-expert.K.LNleftskew.results$ss.mode.results$mode  )^2)/1/3) +
-((abs(Lhat-expert.K.LNleftskew.results$ss.mode.results$lower )^2)/1/3) +
-((abs(Uhat-expert.K.LNleftskew.results$ss.mode.results$upper )^2)/1/3))
+(((abs(Mhat-log(expert.K.LNleftskew.results$ss.mode.results$mode  ))^2)/1/3) +
+((abs(Lhat-log(expert.K.LNleftskew.results$ss.mode.results$lower ))^2)/1/3) +
+((abs(Uhat-log(expert.K.LNleftskew.results$ss.mode.results$upper ))^2)/1/3))
 
 
 ####
@@ -304,15 +304,15 @@ plot.K.min <- min(expert.K.LNleftskew.results$ss.mode.results$lower,
 plot.K.max <- max(expert.K.LNleftskew.results$ss.mode.results$upper,
 	expert.K.LNleftskew.results$feedback.mode.results$new.upper)
 
-plot(rep(c(1),2), rep(c(expert.K.LNleftskew.results$ss.mode.results$lower, expert.K.LNleftskew.results$ss.mode.results$upper),1)
+plot(rep(c(1),2), log(rep(c(expert.K.LNleftskew.results$ss.mode.results$lower, expert.K.LNleftskew.results$ss.mode.results$upper),1))
 	 , xlim=c(0,3), xlab="", ylab="", type="l", main="N",
-	ylim=c(plot.K.min-plot.K.min*.1, plot.K.max+plot.K.max*.1), 
+	ylim=log(c(plot.K.min-plot.K.min*.1, plot.K.max+plot.K.max*.1)), 
 	xaxt = "n", lwd=2, las=2)
-lines(rep(2,2),c(expert.K.LNleftskew.results$ss.mode.results$lower, expert.K.LNleftskew.results$ss.mode.results$upper),lwd=2)
-lines(c(1,2), rep(expert.K.LNleftskew.results$ss.mode.results$lower,2),lwd=2)
-lines(c(1,2), rep(expert.K.LNleftskew.results$ss.mode.results$upper,2),lwd=2)
-lines(c(1,2), rep(expert.K.LNleftskew.results$ss.mode.results$mode,2),col="red",lwd=2)#maths
-lines(c(1,2), rep(Mhat,2),col=1,lwd=2)#best guess
+lines(rep(2,2),log(c(expert.K.LNleftskew.results$ss.mode.results$lower, expert.K.LNleftskew.results$ss.mode.results$upper)),lwd=2)
+lines(c(1,2), log(rep(expert.K.LNleftskew.results$ss.mode.results$lower,2)),lwd=2)
+lines(c(1,2), log(rep(expert.K.LNleftskew.results$ss.mode.results$upper,2)),lwd=2)
+lines(c(1,2), log(rep(expert.K.LNleftskew.results$ss.mode.results$mode,2)),col="red",lwd=2)#maths
+lines(c(1,2), log(rep(Mhat,2)),col=1,lwd=2)#best guess
 
 legend("topleft", lty=1, col=c(1, "red"), bty="n", legend=c("elicited parameters",
 	"estimated (fitted) "),cex=.8) #BEST GUESS IS MODE
@@ -321,8 +321,8 @@ legend("topright", paste("new
 sureness =", new.alpha), cex=.8, bty="n")
 
 #plot new lower & upper conf
-lines(c(1,2), rep(expert.K.LNleftskew.results$feedback.mode.results$new.lower,2), col="red" ,lwd=2)
-lines(c(1,2), rep(expert.K.LNleftskew.results$feedback.mode.results$new.upper,2), col="red",lwd=2)
+lines(c(1,2), log(rep(expert.K.LNleftskew.results$feedback.mode.results$new.lower,2)), col="red" ,lwd=2)
+lines(c(1,2), log(rep(expert.K.LNleftskew.results$feedback.mode.results$new.upper,2)), col="red",lwd=2)
 
 }
 
@@ -349,7 +349,7 @@ return(list(pihat=pihat,
 	fit.best.mode.mu=results$fit.best.mode.mu,
 	fit.best.mode.sig=results$fit.best.mode.sig, 
 	feedback.mode.results=results$feedback.mode.results,
-	Ksp=results$Ksp , MhatK=results$MhatK, which.dist=which.dist,
+	Ksp=log(results$Ksp) , MhatK=results$MhatK, which.dist=which.dist,
 	new.alpha=new.alpha))
 }
 
