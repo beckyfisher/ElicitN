@@ -86,11 +86,11 @@ feedback.mode.results <- feedbackN(fit.best.mode.mu, fit.best.mode.sig,
 X11()
 par(mfrow=c(1,1))
 
-if (ss.mode.results$lower <0) {
-ss.mode.results$lower =0
+if (ss.mode.results$lower <1) {
+ss.mode.results$lower =1
 }
-if (feedback.mode.results$new.lower<0){
-feedback.mode.results$new.lower =0
+if (feedback.mode.results$new.lower<1){
+feedback.mode.results$new.lower =1
 }
 
 #find min & max for plot
