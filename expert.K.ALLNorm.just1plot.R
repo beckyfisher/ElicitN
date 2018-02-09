@@ -135,8 +135,6 @@ legend("topleft", lty=1, col=c(1, "red"), bty="n", legend=c("elicited parameters
 legend("topright", paste("new 
 sureness =", new.alpha), cex=.8, bty="n")
 
-
-
 #plot new lower & upper conf
 lines(c(1,2), rep(expert.K.LN.results$feedback.mode.results$new.lower,2), col="red" ,lwd=2)
 lines(c(1,2), rep(expert.K.LN.results$feedback.mode.results$new.upper,2), col="red",lwd=2)
@@ -149,7 +147,6 @@ lines(c(1,2), rep(expert.K.LN.results$feedback.mode.results$new.upper,2), col="r
 #STORE RESULTS FOR OUTPUT
 results <- expert.K.Norm.results
 which.dist <- c("normal")
-
 
 ####
 #plot
@@ -195,9 +192,6 @@ lines(c(1,2), rep(expert.K.Norm.results$feedback.mode.results$new.lower,2), col=
 lines(c(1,2), rep(expert.K.Norm.results$feedback.mode.results$new.upper,2), col="red",lwd=2)
 }
 
-
-
-
 ####################################################################################################################################################
 #if greater than 50th quartile but less than 75th quartile
 #IF 3
@@ -223,7 +217,6 @@ LNleftskew.score.mode <-
 (((abs(Mhat-log(expert.K.LNleftskew.results$ss.mode.results$mode  ))^2)/1/3) +
 ((abs(Lhat-log(expert.K.LNleftskew.results$ss.mode.results$lower ))^2)/1/3) +
 ((abs(Uhat-log(expert.K.LNleftskew.results$ss.mode.results$upper ))^2)/1/3))
-
 
 ####
 #if 3A.1
@@ -273,8 +266,6 @@ legend("topleft", lty=1, col=c(1, "red"), bty="n", legend=c("elicited parameters
 legend("topright", paste("new 
 sureness =", new.alpha), cex=.8, bty="n")
 
-
-
 #plot new lower & upper conf
 lines(c(1,2), rep(expert.K.Norm.results$feedback.mode.results$new.lower,2), col="red" ,lwd=2)
 lines(c(1,2), rep(expert.K.Norm.results$feedback.mode.results$new.upper,2), col="red",lwd=2)
@@ -309,13 +300,13 @@ plot.K.min <- min(expert.K.LNleftskew.results$ss.mode.results$lower,
 plot.K.max <- max(expert.K.LNleftskew.results$ss.mode.results$upper,
 	expert.K.LNleftskew.results$feedback.mode.results$new.upper)
 
-plot(rep(c(1),2), log(rep(c(expert.K.LNleftskew.results$ss.mode.results$lower, expert.K.LNleftskew.results$ss.mode.results$upper),1))
+plot(rep(c(1),2), log(rep(c(Lhat, Uhat),1))
 	 , xlim=c(0,3), xlab="", ylab="", type="l", main="N",
 	ylim=log(c(plot.K.min-plot.K.min*.1, plot.K.max+plot.K.max*.1)), 
 	xaxt = "n", lwd=2, las=2)
-lines(rep(2,2),log(c(expert.K.LNleftskew.results$ss.mode.results$lower, expert.K.LNleftskew.results$ss.mode.results$upper)),lwd=2)
-lines(c(1,2), log(rep(expert.K.LNleftskew.results$ss.mode.results$lower,2)),lwd=2)
-lines(c(1,2), log(rep(expert.K.LNleftskew.results$ss.mode.results$upper,2)),lwd=2)
+lines(rep(2,2),c(Lhat, Uhat),lwd=2)
+lines(c(1,2), rep(Lhat,2),lwd=2)
+lines(c(1,2), rep(Uhat,2),lwd=2)
 lines(c(1,2), log(rep(expert.K.LNleftskew.results$ss.mode.results$mode,2)),col="red",lwd=2)#maths
 lines(c(1,2), rep(Mhat,2),col=1,lwd=2)#best guess
 
@@ -330,8 +321,6 @@ lines(c(1,2), log(rep(expert.K.LNleftskew.results$feedback.mode.results$new.lowe
 lines(c(1,2), log(rep(expert.K.LNleftskew.results$feedback.mode.results$new.upper,2)), col="red",lwd=2)
 
 }
-
-
 
 ####################################################################################################################################################
 #if greater than 25th quartile
