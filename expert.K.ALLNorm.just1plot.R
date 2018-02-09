@@ -317,7 +317,7 @@ lines(rep(2,2),log(c(expert.K.LNleftskew.results$ss.mode.results$lower, expert.K
 lines(c(1,2), log(rep(expert.K.LNleftskew.results$ss.mode.results$lower,2)),lwd=2)
 lines(c(1,2), log(rep(expert.K.LNleftskew.results$ss.mode.results$upper,2)),lwd=2)
 lines(c(1,2), log(rep(expert.K.LNleftskew.results$ss.mode.results$mode,2)),col="red",lwd=2)#maths
-lines(c(1,2), log(rep(Mhat,2)),col=1,lwd=2)#best guess
+lines(c(1,2), rep(Mhat,2),col=1,lwd=2)#best guess
 
 legend("topleft", lty=1, col=c(1, "red"), bty="n", legend=c("elicited parameters",
 	"estimated (fitted) "),cex=.8) #BEST GUESS IS MODE
