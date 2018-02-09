@@ -230,11 +230,11 @@ if (Norm.score < LNleftskew.score.mode) {
 results <- expert.K.Norm.results
 which.dist <- c("normal")
 
-if (expert.K.Norm.results$ss.mode.results$lower <0) {
-expert.K.Norm.results$ss.mode.results$lower=0
+if (expert.K.Norm.results$ss.mode.results$lower <1) {
+expert.K.Norm.results$ss.mode.results$lower=1
 }
-if (expert.K.Norm.results$feedback.mode.results$new.lower <0){
-expert.K.Norm.results$feedback.mode.results$new.lower =0
+if (expert.K.Norm.results$feedback.mode.results$new.lower <1){
+expert.K.Norm.results$feedback.mode.results$new.lower =1
 }
 
 ####
@@ -283,11 +283,11 @@ lines(c(1,2), rep(expert.K.Norm.results$feedback.mode.results$new.upper,2), col=
 results <- expert.K.LNleftskew.results
 which.dist <- c("LNleftskew")
 
-if (expert.K.LNleftskew.results$ss.mode.results$lower <0) {
-expert.K.LNleftskew.results$ss.mode.results$lower=0
+if (expert.K.LNleftskew.results$ss.mode.results$lower <1) {
+expert.K.LNleftskew.results$ss.mode.results$lower=1
 }
-if (expert.K.LNleftskew.results$feedback.mode.results$new.lower<0){
-expert.K.LNleftskew.results$feedback.mode.results$new.lower =0
+if (expert.K.LNleftskew.results$feedback.mode.results$new.lower<1){
+expert.K.LNleftskew.results$feedback.mode.results$new.lower =1
 }
 
 ####
