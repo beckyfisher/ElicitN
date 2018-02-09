@@ -301,8 +301,8 @@ plot.K.max <- max(expert.K.LNleftskew.results$ss.mode.results$upper,
 	expert.K.LNleftskew.results$feedback.mode.results$new.upper)
 
 plot(rep(c(1),2), rep(log(c(expert.K.LNleftskew.results$ss.mode.results$lower,
-                            expert.K.LNleftskew.results$ss.mode.results$upper)),1),
-  xlim=c(0,3), xlab="", ylab="", type="l", main="N",
+                            expert.K.LNleftskew.results$ss.mode.results$upper)),1)
+                            , xlim=c(0,3), xlab="", ylab="", type="l", main="N",
 	ylim=log(c(plot.K.min-plot.K.min*.1, plot.K.max+plot.K.max*.1)),
 	xaxt = "n", lwd=2, las=2)
 lines(rep(2,2),log(c(expert.K.LNleftskew.results$ss.mode.results$lower, expert.K.LNleftskew.results$ss.mode.results$upper)),lwd=2)
