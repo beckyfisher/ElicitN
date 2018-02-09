@@ -105,11 +105,11 @@ which.dist <- c("LN")
 X11()
 par(mfrow=c(1,1), mar=c(1, 4.5, 4,.75)+.5, mgp=c(3, .75,0), omi=c(.1, .5, .1,.1))
 
-if (expert.K.LN.results$ss.mode.results$lower <0) {
-expert.K.LN.results$ss.mode.results$lower =0
+if (expert.K.LN.results$ss.mode.results$lower <1) {
+expert.K.LN.results$ss.mode.results$lower =1
 }
-if (expert.K.LN.results$feedback.mode.results$new.lower <0){
-expert.K.LN.results$feedback.mode.results$new.lower =0
+if (expert.K.LN.results$feedback.mode.results$new.lower <1){
+expert.K.LN.results$feedback.mode.results$new.lower =1
 }
 
 #find min & max for plot
@@ -156,11 +156,11 @@ which.dist <- c("normal")
 X11()
 par(mfrow=c(1,1), mar=c(1, 4.5, 4,.75)+.5, mgp=c(3, .75,0), omi=c(.1, .5, .1,.1))
 
-if (expert.K.Norm.results$ss.mode.results$lower <0) {
-expert.K.Norm.results$ss.mode.results$lower =0
+if (expert.K.Norm.results$ss.mode.results$lower <1) {
+expert.K.Norm.results$ss.mode.results$lower =1
 }
-if (expert.K.Norm.results$feedback.mode.results$new.lower <0){
-expert.K.Norm.results$feedback.mode.results$new.lower =0
+if (expert.K.Norm.results$feedback.mode.results$new.lower <1){
+expert.K.Norm.results$feedback.mode.results$new.lower =1
 }
 
 #find min & max for plot
