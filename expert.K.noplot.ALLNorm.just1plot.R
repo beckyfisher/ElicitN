@@ -134,9 +134,9 @@ Norm.score <- (
 ((abs(Uhat-expert.K.Norm.results$ss.mode.results$upper)^2)/1/2))
 
 LNleftskew.score.mode <- 
-(((abs(Mhat-expert.K.LNleftskew.results$ss.mode.results$mode  )^2)/1/3) +
-((abs(Lhat-expert.K.LNleftskew.results$ss.mode.results$lower )^2)/1/3) +
-((abs(Uhat-expert.K.LNleftskew.results$ss.mode.results$upper )^2)/1/3))
+(((abs(Mhat-log(expert.K.LNleftskew.results$ss.mode.results$mode)  )^2)/1/3) +
+((abs(Lhat-log(expert.K.LNleftskew.results$ss.mode.results$lower) )^2)/1/3) +
+((abs(Uhat-log(expert.K.LNleftskew.results$ss.mode.results$upper ))^2)/1/3))
 
 
 ####
