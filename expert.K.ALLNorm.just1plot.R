@@ -349,7 +349,7 @@ return(list(pihat=pihat,
 	fit.best.mode.mu=results$fit.best.mode.mu,
 	fit.best.mode.sig=results$fit.best.mode.sig, 
 	feedback.mode.results=results$feedback.mode.results,
-	Ksp=log(results$Ksp) , MhatK=results$MhatK, which.dist=which.dist,
+	Ksp=results$Ksp , MhatK=results$MhatK, which.dist=which.dist,
 	new.alpha=new.alpha))
 }
 
