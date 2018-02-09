@@ -11,7 +11,7 @@
 #PARTICULAR PURPOSE.  See the GNU General Public License
 #(http://www.gnu.org/licenses/) for more details.
 
-expert.K.LNleftskew.just1plot <-function(Lhat, Uhat, Mhat, pihat, new.alpha,best.type.status, ee.type){
+expert.K.LNleftskew.just1plot <-function(Lhat, Uhat, Mhat, pihat, new.alpha, best.type.status, ee.type){
 
 #store old Mhat - what experts provide
 #Mhatold <- c(Mhat)
@@ -78,7 +78,7 @@ fit.best.mode.sig <-modal(fit.results.mode[which(fit.results.mode[,1]
 ss.mode.results <-ss(fit.best.mode.mu, fit.best.mode.sig , pihat)
 
 feedback.mode.results <- feedbackN(fit.best.mode.mu, fit.best.mode.sig,
-                                  pihat,Lhat=Lhat.exp,Uhat=Uhat.exp,new.alpha=new.alpha)
+                                  pihat,Lhat.exp,Uhat.exp,new.alpha=new.alpha)
 
 ############################
 #PLOT
