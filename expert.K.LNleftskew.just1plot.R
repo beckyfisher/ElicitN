@@ -107,7 +107,7 @@ plot(rep(c(1),2), rep(log(c(ss.mode.results$lower, ss.mode.results$upper)),1)
 	 , xlim=c(0,3), xlab="", ylab="", type="l",
 	ylim=log(c(plot.K.min-plot.K.min*.1, plot.K.max+plot.K.max*.1)),
 	xaxt = "n", lwd=2)
-lines(rep(2,2),c(log(ss.mode.results$lower, ss.mode.results$upper)),lwd=2)
+lines(rep(2,2),log(c(ss.mode.results$lower, ss.mode.results$upper)),lwd=2)
 lines(c(1,2), rep(log(ss.mode.results$lower),2),lwd=2)
 lines(c(1,2), rep(log(ss.mode.results$upper),2),lwd=2)
 lines(c(1,2), rep(log(ss.mode.results$mode),2), col="red",lwd=2)#maths
