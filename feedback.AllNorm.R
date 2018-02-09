@@ -41,14 +41,10 @@ if (which.dist=="LN") {
 
 #ELSE MIRROR LOG-NORMAL
 } else {
-	
-	modeLN <- exp(mu-sig^2)
-	mode <- MhatK$Mhatold-(MhatK$Mhat-modeLN)
+	mode <- log(mu)
+	ci <- log(qnorm(c(1-Sureness, .5, Sureness, 1-new.alpha, new.alpha), mean=mu, sd=sig))
 
-	Ksp <-rlnorm(10000,mu,sig)
-
-
-	ci <- qlnorm(c(1-Sureness, .5, Sureness, 1-new.alpha, new.alpha), mean=mu, sd=sig)
+	Ksp <-log(rnorm(10000,mu,sig))
 
 
 }
