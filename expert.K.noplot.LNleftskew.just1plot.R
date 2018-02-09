@@ -77,7 +77,7 @@ fit.best.mode.sig <-modal(fit.results.mode[which(fit.results.mode[,1]
 ss.mode.results <-ss(fit.best.mode.mu, fit.best.mode.sig , pihat)
 
 feedback.mode.results <- feedbackN(fit.best.mode.mu, fit.best.mode.sig,
-                                  pihat,Lhat=Lhat.exp,Uhat=Uhat.exp,new.alpha=new.alpha)
+                                  pihat,Lhat.exp,Uhat.exp,new.alpha=new.alpha)
 
 
 ################
