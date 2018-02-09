@@ -123,7 +123,12 @@ expert.K.Norm.results$feedback.mode.results$new.lower =1
 
 expert.K.Norm.results<- expert.K.noplot.Norm.just1plot(Lhat, Uhat, Mhat, pihat, new.alpha,best.type.status, ee.type)
 expert.K.LNleftskew.results <- expert.K.noplot.LNleftskew.just1plot(Lhat, Uhat, Mhat, pihat, new.alpha,best.type.status, ee.type)
-
+if (expert.K.LNleftskew.results$ss.mode.results$lower <1) {
+expert.K.LNleftskew.results$ss.mode.results$lower =1
+}
+if (expert.K.LNleftskew.results$feedback.mode.results$new.lower <1){
+expert.K.LNleftskew.results$feedback.mode.results$new.lower =1
+}
 
 ###
 #IDENTIFY WHICH DISTRIBUTION IS BETTER
