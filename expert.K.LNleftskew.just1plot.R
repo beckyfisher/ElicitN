@@ -127,7 +127,7 @@ lines(c(1,2), log(rep(feedback.mode.results$new.upper,2)), col="red",lwd=2)
 ################
 #calculate K
 Ksp <-rnorm(10000, fit.best.mode.mu, fit.best.mode.sig)
-
+Ksp[which(Ksp<1)]=1
 
 #################
 #Store values
