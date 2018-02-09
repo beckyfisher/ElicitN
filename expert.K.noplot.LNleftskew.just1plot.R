@@ -82,6 +82,7 @@ feedback.mode.results <- feedbackN(fit.best.mode.mu, fit.best.mode.sig,
 
 ################
 Ksp <-rnorm(10000, fit.best.mode.mu, fit.best.mode.sig)
+Ksp[which(Ksp<1)]=1	
 
 
 #################
