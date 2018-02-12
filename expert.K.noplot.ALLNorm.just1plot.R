@@ -85,11 +85,11 @@ which.dist <- c("LN")
 ###
 #plot 1
 
-if (expert.K.LN.results$ss.mode.results$lower <1) {
-expert.K.LN.results$ss.mode.results$lower =1
+if (expert.K.LN.results$ss.mode.results$lower <0) {
+expert.K.LN.results$ss.mode.results$lower =0
 }
-if (expert.K.LN.results$feedback.mode.results$new.lower <1){
-expert.K.LN.results$feedback.mode.results$new.lower =1
+if (expert.K.LN.results$feedback.mode.results$new.lower <0){
+expert.K.LN.results$feedback.mode.results$new.lower =0
 }
 
 
@@ -106,11 +106,11 @@ which.dist <- c("normal")
 ####
 #plot
 
-if (expert.K.Norm.results$ss.mode.results$lower <1 {
-expert.K.Norm.results$ss.mode.results$lower =1
+if (expert.K.Norm.results$ss.mode.results$lower <0) {
+expert.K.Norm.results$ss.mode.results$lower =0
 }
-if (expert.K.Norm.results$feedback.mode.results$new.lower <1){
-expert.K.Norm.results$feedback.mode.results$new.lower =1
+if (expert.K.Norm.results$feedback.mode.results$new.lower <0){
+expert.K.Norm.results$feedback.mode.results$new.lower =0
 }
 
 }
@@ -123,12 +123,7 @@ expert.K.Norm.results$feedback.mode.results$new.lower =1
 
 expert.K.Norm.results<- expert.K.noplot.Norm.just1plot(Lhat, Uhat, Mhat, pihat, new.alpha,best.type.status, ee.type)
 expert.K.LNleftskew.results <- expert.K.noplot.LNleftskew.just1plot(Lhat, Uhat, Mhat, pihat, new.alpha,best.type.status, ee.type)
-if (expert.K.LNleftskew.results$ss.mode.results$lower <1) {
-expert.K.LNleftskew.results$ss.mode.results$lower =1
-}
-if (expert.K.LNleftskew.results$feedback.mode.results$new.lower <1){
-expert.K.LNleftskew.results$feedback.mode.results$new.lower =1
-}
+
 
 ###
 #IDENTIFY WHICH DISTRIBUTION IS BETTER
@@ -139,9 +134,9 @@ Norm.score <- (
 ((abs(Uhat-expert.K.Norm.results$ss.mode.results$upper)^2)/1/2))
 
 LNleftskew.score.mode <- 
-(((abs(Mhat-log(expert.K.LNleftskew.results$ss.mode.results$mode)  )^2)/1/3) +
-((abs(Lhat-log(expert.K.LNleftskew.results$ss.mode.results$lower) )^2)/1/3) +
-((abs(Uhat-log(expert.K.LNleftskew.results$ss.mode.results$upper ))^2)/1/3))
+(((abs(Mhat-expert.K.LNleftskew.results$ss.mode.results$mode  )^2)/1/3) +
+((abs(Lhat-expert.K.LNleftskew.results$ss.mode.results$lower )^2)/1/3) +
+((abs(Uhat-expert.K.LNleftskew.results$ss.mode.results$upper )^2)/1/3))
 
 
 ####
@@ -154,11 +149,11 @@ if (Norm.score < LNleftskew.score.mode) {
 results <- expert.K.Norm.results
 which.dist <- c("normal")
 
-if (expert.K.Norm.results$ss.mode.results$lower <1) {
-expert.K.Norm.results$ss.mode.results$lower=1
+if (expert.K.Norm.results$ss.mode.results$lower <0) {
+expert.K.Norm.results$ss.mode.results$lower=0
 }
-if (expert.K.Norm.results$feedback.mode.results$new.lower <1){
-expert.K.Norm.results$feedback.mode.results$new.lower =1
+if (expert.K.Norm.results$feedback.mode.results$new.lower <0){
+expert.K.Norm.results$feedback.mode.results$new.lower =0
 }
 
 
@@ -171,11 +166,11 @@ expert.K.Norm.results$feedback.mode.results$new.lower =1
 results <- expert.K.LNleftskew.results
 which.dist <- c("LNleftskew")
 
-if (expert.K.LNleftskew.results$ss.mode.results$lower <1) {
-expert.K.LNleftskew.results$ss.mode.results$lower=1
+if (expert.K.LNleftskew.results$ss.mode.results$lower <0) {
+expert.K.LNleftskew.results$ss.mode.results$lower=0
 }
-if (expert.K.LNleftskew.results$feedback.mode.results$new.lower<1){
-expert.K.LNleftskew.results$feedback.mode.results$new.lower =1
+if (expert.K.LNleftskew.results$feedback.mode.results$new.lower<0){
+expert.K.LNleftskew.results$feedback.mode.results$new.lower =0
 }
 
 
