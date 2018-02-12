@@ -30,12 +30,18 @@ eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/maste
 eval(parse(text = eval.text))
 #source("expert.K.ALLNorm.just1plot.R")
 
-eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.R", ssl.verifypeer = FALSE)
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.K.noplot.ALLNorm.just1plot.R", ssl.verifypeer = FALSE)
 eval(parse(text = eval.text))
+
+eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/rnormals.number.R", ssl.verifypeer = FALSE)
+eval(parse(text = eval.text))
+
+#eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.R", ssl.verifypeer = FALSE)
+#eval(parse(text = eval.text))
 #source("expert.R")
 
-eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.just1plot.R", ssl.verifypeer = FALSE)
-eval(parse(text = eval.text))
+#eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/expert.just1plot.R", ssl.verifypeer = FALSE)
+#eval(parse(text = eval.text))
 #source("expert.just1plot.R")
 
 eval.text <- getURL("https://raw.githubusercontent.com/beckyfisher/ElicitN/master/ee_default.vars.r", ssl.verifypeer = FALSE)
@@ -88,9 +94,17 @@ names(out)
 n=length(out$Ksp)
 
 # now sum for all people and tasks
-complete.sample=rowSums(do.call("cbind",lapply(fitted.components, FUN=function(x){x$Ksp})))
+complete.sample=rowSums(do.call("cbind",lapply(fitted.components, FUN=function(x){
+           #x$Ksp
+           rnormals.number(n, x$fit.best.mode.mu, x$fit.best.mode.sig,
+                                 x$which.dist,
+                                 x$feedback.mode.results$lower,x$feedback.mode.results$upper)
+           })))
 dev.off()
 boxplot(complete.sample)
+
+
+
 
 
 # now sum for each task
@@ -100,8 +114,14 @@ t=1
 task.sums=list()
 for(t in 1:length(tasks)){
  task.sample=rowSums(do.call("cbind",lapply(fitted.components,
-                FUN=function(x){if(x$Taxon==tasks[t]){
-                        return(x$Ksp)}else{return(rep(0,n))}})))
+                FUN=function(x){
+                        out.x=rep(0,n)
+                        if(x$Taxon==tasks[t]){
+                             rnormals.number(n, x$fit.best.mode.mu, x$fit.best.mode.sig,
+                                 x$which.dist,
+                                 x$feedback.mode.results$lower,x$feedback.mode.results$upper)
+                        }
+                return(out.x)}})))
  task.sums=c(task.sums,list(task.sample))}
 
 names(task.sums)=tasks
