@@ -68,10 +68,10 @@ for(r in 1:nrow(tbl_component1)){
         Name=tbl_component1[r,"Name"]
         Taxon=tbl_component1[r,"Taxon"]
         Units=as.numeric(tbl_component1[r,"Units"])
-        Smallest=as.numeric(tbl_component1[r,"Smallest"])
-        Largest=as.numeric(tbl_component1[r,"Largest"])
-        Lower.N=as.numeric(tbl_component1[r,"Lower"])
-        Upper.N=as.numeric(tbl_component1[r,"Upper"])
+        Smallest=as.numeric(tbl_component1[r,"Smallest"])*Units
+        Largest=as.numeric(tbl_component1[r,"Largest"])*Units
+        Lower.N=as.numeric(tbl_component1[r,"Lower"])*Units
+        Upper.N=as.numeric(tbl_component1[r,"Upper"])*Units
         Sureness=as.numeric(tbl_component1[r,"Sureness"])/100
         Best.N=as.numeric(tbl_component1[r,"Best"])
         new.alpha=0.95
