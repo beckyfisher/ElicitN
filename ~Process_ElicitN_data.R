@@ -84,7 +84,7 @@ for(r in 1:nrow(tbl_component1)){
                                                new.alpha=new.alpha, best.type.status="best.type.status.expert",
                                                ee.type=1)
    out=c(out,Name,Taxon)
-   fitted.components=c(fitted.components,list(out))}
+   fitted.components=c(fitted.components,list(c(tbl_component1[r,],out)))}
 
 }
 
@@ -93,22 +93,15 @@ names(out)
 
 n=length(out$Ksp)
 
-# now sum for all people and tasks
+# now sum for all experts and questions
 complete.sample=rowSums(do.call("cbind",lapply(fitted.components, FUN=function(x){
            #x$Ksp
            rnormals.number(n, x$fit.best.mode.mu, x$fit.best.mode.sig,
                                  x$which.dist,
                                  x$feedback.mode.results$lower,x$feedback.mode.results$upper)
            })))
-dev.off()
-boxplot(complete.sample)
-
-
-
-
 
 # now sum for each task
-dev.off()
 tasks=na.omit(unique(tbl_component1[,"Taxon"]))
 t=1
 task.sums=list()
@@ -117,19 +110,104 @@ for(t in 1:length(tasks)){
                 FUN=function(x){
                         out.x=rep(0,n)
                         if(x$Taxon==tasks[t]){
-                             rnormals.number(n, x$fit.best.mode.mu, x$fit.best.mode.sig,
+                             out.x=rnormals.number(n, x$fit.best.mode.mu, x$fit.best.mode.sig,
                                  x$which.dist,
                                  x$feedback.mode.results$lower,x$feedback.mode.results$upper)
                         }
-                return(out.x)}})))
+                return(out.x)})))
+
+
+
  task.sums=c(task.sums,list(task.sample))}
-
 names(task.sums)=tasks
-par(mfrow=c(ceiling(length(tasks)/2),2))
-for(t in 1:length(tasks)){
-     boxplot(task.sums[tasks[t]],main=tasks[t])
 
+# now sum by experts
+names=na.omit(unique(tbl_component1[,"Name"]))
+t=1
+name.sums=list()
+for(t in 1:length(names)){
+ name.sample=rowSums(do.call("cbind",lapply(fitted.components,
+                FUN=function(x){
+                        out.x=rep(0,n)
+                        if(x$Name==names[t]){
+                             out.x=rnormals.number(n, x$fit.best.mode.mu, x$fit.best.mode.sig,
+                                 x$which.dist,
+                                 x$feedback.mode.results$lower,x$feedback.mode.results$upper)
+                        }
+                return(out.x)})))
+
+
+
+ name.sums=c(name.sums,list(name.sample))}
+names(name.sums)=names
+
+pdf("Total_sum.pdf")
+plot(density(complete.sample),main="Summed total")
+abline(v=quantile(complete.sample, probs=c(0.025,0.5,0.975)),col="red",lty=c(3,1,3))
+dev.off()
+
+pdf("Total_sum_by_components.pdf",onefile=T)
+for(t in 1:length(tasks)){
+ plot(density(task.sums[[tasks[t]]]),main=paste("Summed total -",tasks[t]))
+ abline(v=quantile(task.sums[[tasks[t]]], probs=c(0.025,0.5,0.975)),col="red",lty=c(3,1,3))
 }
+dev.off()
+
+pdf("Total_sum_by_names.pdf",onefile=T)
+for(t in 1:length(names)){
+ plot(density(name.sums[[names[t]]]),main=paste("Summed total -",names[t]))
+ abline(v=quantile(name.sums[[tasks[t]]], probs=c(0.025,0.5,0.975)),col="red",lty=c(3,1,3))
+}
+dev.off()
+
+
+save(list=ls(),file="Collated_results_R_workspace.Rdata")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
