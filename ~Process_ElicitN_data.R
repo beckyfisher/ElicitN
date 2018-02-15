@@ -68,10 +68,10 @@ for(r in 1:nrow(tbl_component1)){
         Name=tbl_component1[r,"Name"]
         Taxon=tbl_component1[r,"Taxon"]
         Units=as.numeric(tbl_component1[r,"Units"])
-        Smallest=as.numeric(tbl_component1[r,"Smallest"])*Units
-        Largest=as.numeric(tbl_component1[r,"Largest"])*Units
-        Lower.N=as.numeric(tbl_component1[r,"Lower"])*Units
-        Upper.N=as.numeric(tbl_component1[r,"Upper"])*Units
+        Smallest=as.numeric(tbl_component1[r,"Smallest"])#*Units
+        Largest=as.numeric(tbl_component1[r,"Largest"])#*Units
+        Lower.N=as.numeric(tbl_component1[r,"Lower"])#*Units
+        Upper.N=as.numeric(tbl_component1[r,"Upper"])#*Units
         Sureness=as.numeric(tbl_component1[r,"Sureness"])/100
         Best.N=as.numeric(tbl_component1[r,"Best"])
         new.alpha=0.95
@@ -98,7 +98,7 @@ complete.sample=rowSums(do.call("cbind",lapply(fitted.components, FUN=function(x
            #x$Ksp
            rnormals.number(n, x$fit.best.mode.mu, x$fit.best.mode.sig,
                                  x$which.dist,
-                                 x$feedback.mode.results$lower,x$feedback.mode.results$upper)
+                                 x$feedback.mode.results$lower,x$feedback.mode.results$upper)*as.numeric(x$Units)
            })))
 
 # now sum for each task
@@ -112,7 +112,7 @@ for(t in 1:length(tasks)){
                         if(x$Taxon==tasks[t]){
                              out.x=rnormals.number(n, x$fit.best.mode.mu, x$fit.best.mode.sig,
                                  x$which.dist,
-                                 x$feedback.mode.results$lower,x$feedback.mode.results$upper)
+                                 x$feedback.mode.results$lower,x$feedback.mode.results$upper)*as.numeric(x$Units)
                         }
                 return(out.x)})))
 
@@ -132,7 +132,7 @@ for(t in 1:length(names)){
                         if(x$Name==names[t]){
                              out.x=rnormals.number(n, x$fit.best.mode.mu, x$fit.best.mode.sig,
                                  x$which.dist,
-                                 x$feedback.mode.results$lower,x$feedback.mode.results$upper)
+                                 x$feedback.mode.results$lower,x$feedback.mode.results$upper)*as.numeric(x$Units)
                         }
                 return(out.x)})))
 
